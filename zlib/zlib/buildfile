@@ -1,0 +1,11 @@
+lib{zlib}: {h c}{upstream/*}
+
+c.poptions =+ "-I$src_base"
+objs{*}: c.poptions += -DZLIB_DLL
+
+lib{zlib}: cc.export.poptions = "-I$src_base"
+libs{zlib}: c.export.poptions += -DZLIB_DLL
+
+h{*}: install = false
+for h: zlib zconf
+  upstream/h{$h}@./upstream/: install = include/

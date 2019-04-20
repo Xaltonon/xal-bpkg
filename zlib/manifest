@@ -1,0 +1,9 @@
+: 1
+name: zlib
+version: 1.2.11
+project: xal-bpkg
+summary:  A Massively Spiffy Yet Delicately Unobtrusive Compression Library
+license: zlib
+url: https://www.zlib.net/
+depends: * build2 >= 0.9.0-
+depends: * bpkg >= 0.9.0-

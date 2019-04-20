@@ -1,0 +1,6 @@
+$out_root/
+{
+  include zlib/
+}
+
+export $out_root/zlib/$import.target
