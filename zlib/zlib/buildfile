@@ -1,10 +1,10 @@
-lib{zlib}: {h c}{upstream/*}
+lib{z}: {h c}{upstream/*}
 
-c.poptions =+ "-I$src_base"
+c.poptions =+ "-I$src_base/upstream"
 objs{*}: c.poptions += -DZLIB_DLL
 
-lib{zlib}: cc.export.poptions = "-I$src_base"
-libs{zlib}: c.export.poptions += -DZLIB_DLL
+lib{z}: cc.export.poptions = "-I$src_base/upstream"
+libs{z}: c.export.poptions += -DZLIB_DLL
 
 h{*}: install = false
 for h: zlib zconf

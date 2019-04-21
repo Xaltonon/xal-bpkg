@@ -1,0 +1,11 @@
+using c
+
+h{*}: extension = h
+c{*}: extension = c
+
+test.target = $c.target
+
+if ($cc.target.class == 'windows')
+{
+  cc.poptions += -DWIN32
+}

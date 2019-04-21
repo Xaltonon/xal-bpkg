@@ -1,3 +1,6 @@
 [submodule "zlib/zlib/upstream"]
 	path = zlib/zlib/upstream
 	url = https://github.com/madler/zlib.git
+[submodule "libpng/libpng/upstream"]
+	path = libpng/libpng/upstream
+	url = https://github.com/glennrp/libpng.git

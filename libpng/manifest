@@ -1,0 +1,9 @@
+: 1
+name: libpng
+version: 1.6.37
+project: xal-bpkg
+summary: The official PNG reference library
+license: libpng
+depends: * build2 >= 0.9.0-
+depends: * bpkg >= 0.9.0-
+depends: zlib ^1.2.11

@@ -1,0 +1,28 @@
+import int_libs = zlib%lib{z}
+imp_libs =
+
+if ($cc.target.system != 'win32-msvc' && $cc.target.class != 'macos')
+{
+  import imp_libs = lib{m}
+}
+
+lib{png}: {h c}{upstream/*} $imp_libs $int_libs
+
+c.poptions =+ "-I$src_base" "-I$src_base/upstream"
+
+lib{png}:
+{
+  c.export.poptions = "-I$src_base" "-I$src_base/upstream"
+  c.export.libs = $int_libs
+}
+
+if ($cc.target.system == 'win32-msvc')
+{
+  objs{*}: c.poptions += -DPNG_BUILD_DLL
+  libs{png}: c.export.poptions += -DPNG_BUILD_DLL
+}
+
+h{*}: install = false
+for h: png pngconf
+  upstream/h{$h}@./upstream/: install = include/
+h{pnglibconf}@./: install = include/
