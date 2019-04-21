@@ -12,14 +12,14 @@ c.poptions =+ "-I$src_base" "-I$src_base/upstream"
 
 lib{png}:
 {
-  c.export.poptions = "-I$src_base" "-I$src_base/upstream"
-  c.export.libs = $int_libs
+  cc.export.poptions = "-I$src_base" "-I$src_base/upstream"
+  cc.export.libs = $int_libs
 }
 
 if ($cc.target.system == 'win32-msvc')
 {
   objs{*}: c.poptions += -DPNG_BUILD_DLL
-  libs{png}: c.export.poptions += -DPNG_BUILD_DLL
+  libs{png}: cc.export.poptions += -DPNG_BUILD_DLL
 }
 
 h{*}: install = false

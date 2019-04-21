@@ -2,3 +2,5 @@
 location: zlib/
 :
 location: libpng/
+:
+location: libwebp/

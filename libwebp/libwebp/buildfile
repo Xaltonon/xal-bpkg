@@ -1,0 +1,23 @@
+if ($cc.target.system != 'win32-msvc' && $cc.target.class != 'macos')
+{
+  import imp_libs = lib{m}
+}
+
+lib{webp}: {h c}{upstream/src/**} $imp_libs
+
+c.poptions =+ "-I$src_base/upstream"
+
+lib{webp}:
+{
+  c.export.poptions = "-I$src_base/upstream/src"
+  c.export.libs = $int_libs
+}
+
+if ($cc.target.system == 'win32-msvc')
+{
+  objs{*}: c.poptions += '-DWEBP_EXTERN=__declspec(dllexport)'
+  libs{webp}: cc.export.poptions += '-DWEBP_EXTERN=__declspec(dllexport)'
+}
+
+h{*}: install = false
+upstream/src/webp/h{*}: install = include/webp/

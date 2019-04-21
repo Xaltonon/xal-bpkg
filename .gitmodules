@@ -4,3 +4,6 @@
 [submodule "libpng/libpng/upstream"]
 	path = libpng/libpng/upstream
 	url = https://github.com/glennrp/libpng.git
+[submodule "libwebp/libwebp/upstream"]
+	path = libwebp/libwebp/upstream
+	url = https://github.com/webmproject/libwebp.git

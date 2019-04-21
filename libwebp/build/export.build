@@ -1,0 +1,6 @@
+$out_root/
+{
+  include libwebp/
+}
+
+export $out_root/libwebp/$import.target
