@@ -1,0 +1,8 @@
+lib{cli11}: hxx{upstream/include/CLI/*}
+
+hxx{*}:
+{
+  install = include/CLI/
+}
+
+lib{cli11}: cxx.export.poptions = "-I$src_base/upstream/include"

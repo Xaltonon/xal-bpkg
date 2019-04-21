@@ -7,3 +7,6 @@
 [submodule "libwebp/libwebp/upstream"]
 	path = libwebp/libwebp/upstream
 	url = https://github.com/webmproject/libwebp.git
+[submodule "cli11/cli11/upstream"]
+	path = cli11/cli11/upstream
+	url = https://github.com/CLIUtils/CLI11.git

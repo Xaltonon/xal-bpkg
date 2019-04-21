@@ -1,0 +1,7 @@
+: 1
+name: cli11
+version: 1.7.1
+summary: A command line parser for C++11
+license: bsd
+depends: * build2 >= 0.9.0-
+depends: * bpkg >= 0.9.0-

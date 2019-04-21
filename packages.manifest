@@ -4,3 +4,5 @@ location: zlib/
 location: libpng/
 :
 location: libwebp/
+:
+location: cli11/
