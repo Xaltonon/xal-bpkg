@@ -1,0 +1,16 @@
+using c
+
+h{*}: extension = h
+c{*}: extension = c
+
+if ($cc.target.class == 'windows')
+{
+  using cxx
+  hxx{*}: extension = hpp
+  cxx{*}: extension = cpp
+}
+
+if ($cc.target.system == 'win32-msvc')
+{
+  cc.coptions += /wd4312
+}

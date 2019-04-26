@@ -1,0 +1,8 @@
+: 1
+name: libui
+version: 0.4.1
+project: xal-bpkg
+summary: Simple and portable (but not inflexible) GUI library in C
+license: mit
+depends: * build2 >= 0.9.0-
+depends: * bpkg >= 0.9.0-

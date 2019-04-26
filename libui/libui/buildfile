@@ -1,0 +1,29 @@
+int_libs =
+imp_libs =
+
+if ($cc.target.class == 'linux')
+{
+  platform_targs = h{upstream/ui_unix} {h c}{upstream/unix/* -upstream/unix/OLD_table}
+  import imp_libs += gtk+-3.0%lib{gtk-3}
+}
+elif ($cc.target.class == 'windows')
+{
+  platform_targs = h{upstream/ui_windows} {h c hxx cxx}{upstream/windows/*}
+  cc.loptions += user32.lib kernel32.lib gdi32.lib comctl32.lib uxtheme.lib msimg32.lib comdlg32.lib d2d1.lib dwrite.lib ole32.lib oleaut32.lib oleacc.lib uuid.lib windowscodecs.lib
+}
+
+cc.poptions =+ "-I$src_base/upstream" "-Dmodule=module_"
+
+lib{ui}: h{upstream/ui} {h c}{upstream/common/* -upstream/common/OLD_table} $platform_targs $imp_libs $int_libs
+
+lib{ui}:
+{
+  cc.export.poptions = "-I$src_base/upstream" "-Dmodule=module_"
+  cc.export.libs = $int_libs
+}
+
+if ($cc.target.system == 'win32-msvc')
+{
+  objs{*}: cc.poptions += -D_WIN32 -Dlibui_EXPORTS
+  libs{ui}: cc.export.poptions += -D_WIN32 -Dlibui_EXPORTS
+}

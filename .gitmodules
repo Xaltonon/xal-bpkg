@@ -10,3 +10,6 @@
 [submodule "cli11/cli11/upstream"]
 	path = cli11/cli11/upstream
 	url = https://github.com/CLIUtils/CLI11.git
+[submodule "libui/libui/upstream"]
+	path = libui/libui/upstream
+	url = https://github.com/andlabs/libui.git

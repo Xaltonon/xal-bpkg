@@ -1,0 +1,6 @@
+$out_root/
+{
+  include libui/
+}
+
+export $out_root/libui/$import.target

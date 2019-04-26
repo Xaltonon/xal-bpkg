@@ -6,3 +6,5 @@ location: libpng/
 location: libwebp/
 :
 location: cli11/
+:
+location: libui/
